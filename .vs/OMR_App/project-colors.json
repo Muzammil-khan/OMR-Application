@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "61eb277d-1b40-4535-bab0-ff4c110d5bdd": {
+      "ProjectGuid": "61eb277d-1b40-4535-bab0-ff4c110d5bdd",
+      "DisplayName": "OMR_App",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

@@ -1,0 +1,2512 @@
+<?xml version="1.0"?>
+<doc>
+  <assembly>
+    <name>Aspose.OMR</name>
+  </assembly>
+  <members>
+    <member name="T:Aspose.OMR.Api.ImageCollection">
+      <summary>
+            Collection of Images that can be used for template Generation.
+            e.g. <see cref="M:Aspose.OMR.Api.OmrEngine.GenerateTemplate(System.IO.MemoryStream,Aspose.OMR.Api.ImageCollection)" />
+            Can be useful when your images are not in the file system.
+            </summary>
+    </member>
+    <member name="M:Aspose.OMR.Api.ImageCollection.Add(System.String,System.IO.MemoryStream)">
+      <summary>
+            Add image to collection.
+            </summary>
+      <param name="imageName">Name of the image used in <see cref="P:Aspose.OMR.Generation.Config.Elements.ImageConfig.Name" /></param>
+      <param name="stream">Contents of the image file as Stream</param>
+    </member>
+    <member name="T:Aspose.OMR.Api.OmrEngine">
+      <summary>
+            The OMR engine.
+            Handles the creation of the template and image processing classes and GUI components.
+            </summary>
+      <example>
+        <code>
+                // get template processor
+                OmrEngine engine = new OmrEngine();
+                TemplateProcessor templateProcessor = engine.GetTemplateProcessor(templatePath);
+            </code>
+      </example>
+      <example>
+        <code>
+                // get correction GUI control
+                OmrEngine engine = new OmrEngine();
+                TemplateProcessor templateProcessor = engine.GetTemplateProcessor(templatePath);
+                CorrectionControl control = engine.GetCorrectionControl(templateProcessor);
+            </code>
+      </example>
+      <example>
+        <code>
+                // generate template
+                OmrEngine engine = new OmrEngine();
+                GenerationResult result = engine.GenerateTemplate(markupPath);
+                if(result.ErrorCode == 0)
+                {
+                    result.Save(folderPath, templateName);
+                }
+            </code>
+      </example>
+    </member>
+    <member name="M:Aspose.OMR.Api.OmrEngine.GetTemplateProcessor(System.IO.MemoryStream,System.Text.Encoding)">
+      <summary>
+            Creates the <see cref="T:Aspose.OMR.Api.TemplateProcessor" /> instance that allows working with specified template.
+            </summary>
+      <param name="templateContent">Memory stream with template text content</param>
+      <param name="textEncoding">Template content encoding</param>
+      <returns>The <see cref="T:Aspose.OMR.Api.TemplateProcessor" /> instance </returns>
+    </member>
+    <member name="M:Aspose.OMR.Api.OmrEngine.GetTemplateProcessor(System.String)">
+      <summary>
+            Creates the <see cref="T:Aspose.OMR.Api.TemplateProcessor" /> instance that allows working with specified template.
+            </summary>
+      <param name="templatePath">The path to the OMR template file</param>
+      <returns>The <see cref="T:Aspose.OMR.Api.TemplateProcessor" /> instance</returns>
+    </member>
+    <member name="M:Aspose.OMR.Api.OmrEngine.GetCorrectionControl(Aspose.OMR.Api.TemplateProcessor)">
+      <summary>
+            Creates the <see cref="T:Aspose.OMR.CorrectionUI.CorrectionControl" /> instance that allows working with OMR API using GUI.
+            Takes <see cref="T:Aspose.OMR.Api.TemplateProcessor" /> as a parameter and only works with images created using specified template
+            </summary>
+      <param name="processor">The template processor </param>
+      <returns>The <see cref="T:Aspose.OMR.CorrectionUI.CorrectionControl" /> instance</returns>
+    </member>
+    <member name="M:Aspose.OMR.Api.OmrEngine.GenerateTemplate(System.IO.MemoryStream,Aspose.OMR.Generation.GlobalPageSettings,Aspose.OMR.Api.ImageCollection)">
+      <summary>
+            Creates a template (.omr) and template image based on MemoryStream
+            </summary>
+      <param name="stream">The stream which contains markup lines</param>
+      <param name="settings">The global settings applicable to all page elements</param>
+      <param name="userImages">Collection of images that can be used for a template generation. Allow to use images from MemoryStream instead of file system</param>
+      <returns>Generation result</returns>
+    </member>
+    <member name="M:Aspose.OMR.Api.OmrEngine.GenerateTemplate(System.IO.MemoryStream,Aspose.OMR.Api.ImageCollection)">
+      <summary>
+            Creates a template (.omr) and template image based on MemoryStream
+            </summary>
+      <param name="stream">The stream which contains markup lines</param>
+      <param name="userImages">Collection of images that can be used for a template generation. Allow to use images from MemoryStream instead of file system</param>
+      <returns>Generation result</returns>
+    </member>
+    <member name="M:Aspose.OMR.Api.OmrEngine.GenerateTemplate(System.String[],Aspose.OMR.Generation.GlobalPageSettings,Aspose.OMR.Api.ImageCollection)">
+      <summary>
+            Creates a template (.omr) and template image based on an array of the markup lines
+            </summary>
+      <param name="markupLines">Array of the markup lines</param>
+      <param name="settings">The global settings applicable to all page elements</param>
+      <param name="userImages">Collection of images that can be used for a template generation. Allow to use images from MemoryStream instead of file system</param>
+      <returns>Generation result</returns>
+    </member>
+    <member name="M:Aspose.OMR.Api.OmrEngine.GenerateTemplate(System.String[],Aspose.OMR.Api.ImageCollection)">
+      <summary>
+            Creates a template (.omr) and template image based on an array of the markup lines
+            </summary>
+      <param name="markupLines">Array of the markup lines</param>
+      <param name="userImages">Collection of images that can be used for a template generation. Allow to use images from MemoryStream instead of file system</param>
+      <returns>Generation result</returns>
+    </member>
+    <member name="M:Aspose.OMR.Api.OmrEngine.GenerateTemplate(System.String,Aspose.OMR.Generation.GlobalPageSettings)">
+      <summary>
+            Creates a template (.omr) and template image based on text markup
+            </summary>
+      <param name="markupPath">Path to the text markup file</param>
+      <param name="settings">The global settings applicable to all page elements</param>
+      <returns>Generation result</returns>
+    </member>
+    <member name="M:Aspose.OMR.Api.OmrEngine.GenerateTemplate(System.String)">
+      <summary>
+            Creates a template (.omr) and template image based on text markup
+            </summary>
+      <param name="markupPath">Path to the text markup file</param>
+      <returns>Generation result</returns>
+    </member>
+    <member name="M:Aspose.OMR.Api.OmrEngine.GenerateTemplate(System.String,System.String[])">
+      <summary>
+            Creates a template (.omr) and template image based on text markup
+            </summary>
+      <param name="markupPath">Path to the text markup file</param>
+      <param name="imagesPaths">Full paths to the images used in generation</param>
+      <returns>Generation result</returns>
+    </member>
+    <member name="M:Aspose.OMR.Api.OmrEngine.GenerateJSONTemplate(System.String,Aspose.OMR.Generation.GlobalPageSettings)">
+      <summary>
+            Creates a template (.omr) and template image based on .json markup
+            </summary>
+      <param name="jsonPath">path to *.json file with markup</param>
+      <param name="settings">global settings used in all template generation</param>
+      <returns>Generation result</returns>
+    </member>
+    <member name="M:Aspose.OMR.Api.OmrEngine.GenerateJSONTemplateFromString(System.String,Aspose.OMR.Generation.GlobalPageSettings,Aspose.OMR.Api.ImageCollection)">
+      <summary>
+            Creates a template (.omr) and template image based on JSON markup
+            </summary>
+      <param name="jsonString">JSON markup</param>
+      <param name="settings">global settings used in all template generation</param>
+      <param name="userImages">Collection of images that can be used for a template generation. Allow to use images from MemoryStream instead of file system</param>
+      <returns>Generation result</returns>
+    </member>
+    <member name="M:Aspose.OMR.Api.OmrEngine.GenerateTemplate(Aspose.OMR.Generation.Config.TemplateConfig,Aspose.OMR.Generation.GlobalPageSettings,Aspose.OMR.Api.ImageCollection)">
+      <summary>
+            Creates a template (.omr) and template image based on Template object
+            </summary>
+      <param name="config">Template object that represent all elements</param>
+      <param name="settings">global settings used in all template generation</param>
+      <param name="userImages">Collection of images that can be used for a template generation. Allow to use images from MemoryStream instead of file system</param>
+      <returns>Generation result</returns>
+    </member>
+    <member name="T:Aspose.OMR.Api.TemplateProcessor">
+      <summary>
+            Class for processing templates and images.
+            <remarks>
+            Each instance of this class works with a single OMR template.
+            It is able to recognize images of the template specified in the constructor.
+            </remarks></summary>
+      <example>
+        <code>
+                OmrEngine engine = new OmrEngine();
+                TemplateProcessor templateProcessor = engine.GetTemplateProcessor(templatePath);
+                RecognitionResult result = templateProcessor.RecognizeImage(imagePath);
+                string csvResult = result.GetCsv();
+            </code>
+      </example>
+    </member>
+    <member name="M:Aspose.OMR.Api.TemplateProcessor.RecognizeMultiPageTemplate(System.String[],System.Int32)">
+      <summary>
+            Recognizes multi-page template
+            </summary>
+      <param name="imagePaths">The path to the images to recognize</param>
+      <param name="recognitionThreshold">
+            (Optional) The recognition threshold in range (0..100). 
+            Only elements filled above threshold will be counted as filled.</param>
+      <returns>The recognition result</returns>
+    </member>
+    <member name="M:Aspose.OMR.Api.TemplateProcessor.RecognizeImage(System.String,System.Int32)">
+      <summary>
+            Recognizes image 
+            </summary>
+      <param name="imagePath">The path to the image to recognize</param>
+      <param name="recognitionThreshold">
+            (Optional) The recognition threshold in range (0..100). 
+            Only elements filled above threshold will be counted as filled.</param>
+      <returns>The recognition result</returns>
+    </member>
+    <member name="M:Aspose.OMR.Api.TemplateProcessor.RecognizeImage(System.IO.MemoryStream,System.Int32)">
+      <summary>
+            Recognizing image from memory stream
+            </summary>
+      <param name="stream">Memory stream of image.</param>
+      <param name="recognitionThreshold">
+            (Optional) The recognition threshold in range (0..100). 
+            Only elements filled above threshold will be counted as filled.</param>
+      <returns>The recognition result</returns>
+    </member>
+    <member name="M:Aspose.OMR.Api.TemplateProcessor.RecognizeFolder(System.String,System.Int32)">
+      <summary>
+            Recognizes images from folder
+            </summary>
+      <param name="folderPath">The path to the folder where the images to recognize are located</param>
+      <param name="recognitionThreshold">
+            (Optional) The recognition threshold in range (0..100). 
+            Only elements filled above threshold will be counted as filled.</param>
+      <returns>The recognition result</returns>
+    </member>
+    <member name="M:Aspose.OMR.Api.TemplateProcessor.Recalculate(Aspose.OMR.Model.RecognitionResult,System.Int32)">
+      <summary>
+            Updates recognition result using fine tuned parameters.
+            </summary>
+      <remarks>
+            Use this method to improve the recognition results 
+            </remarks>
+      <param name="result">The recognition result to update.</param>
+      <param name="recognitionThreshold">
+            (Optional) The recognition threshold in range (0..100). 
+            Only elements filled above threshold will be counted as filled.</param>
+    </member>
+    <member name="T:Aspose.OMR.CorrectionUI.CorrectionControl">
+      <summary>
+            The User Control that allows recognizing images and correct and calibrate recognition parameters
+            </summary>
+      <summary>
+            CorrectionControl
+            </summary>
+    </member>
+    <member name="M:Aspose.OMR.CorrectionUI.CorrectionControl.Initialize">
+      <summary>
+            Initialize the control
+            </summary>
+    </member>
+    <member name="M:Aspose.OMR.CorrectionUI.CorrectionControl.LoadAndDisplayImage(System.String)">
+      <summary>
+            Load and display the image for the recognition
+            </summary>
+      <param name="imagePath">Path to the filled image to recognize</param>
+    </member>
+    <member name="M:Aspose.OMR.CorrectionUI.CorrectionControl.RecognizeImage">
+      <summary>
+            Recognize image
+            </summary>
+    </member>
+    <member name="M:Aspose.OMR.CorrectionUI.CorrectionControl.ExportResults(System.String)">
+      <summary>
+            Export the recognition results for the image
+            </summary>
+      <param name="exportPath">Path to the export</param>
+    </member>
+    <member name="M:Aspose.OMR.CorrectionUI.CorrectionControl.InitializeComponent">
+      <summary>
+            InitializeComponent
+            </summary>
+    </member>
+    <member name="T:Aspose.OMR.Metered">
+      <summary>
+            Provides methods to set metered key.
+            </summary>
+      <example>
+            In this example, an attempt will be made to set metered public and private key
+            
+            <code>
+            [C#]
+            
+            Metered matered = new Metered();
+            matered.SetMeteredKey("PublicKey", "PrivateKey");
+            
+            
+            [Visual Basic]
+            
+            Dim matered As Metered = New Metered
+            matered.SetMeteredKey("PublicKey", "PrivateKey")
+            </code></example>
+    </member>
+    <member name="M:Aspose.OMR.Metered.SetMeteredKey(System.String,System.String)">
+      <summary>
+            Sets metered public and private key
+            </summary>
+      <param name="publicKey">public key</param>
+      <param name="privateKey">private key</param>
+    </member>
+    <member name="M:Aspose.OMR.Metered.GetConsumptionQuantity">
+      <summary>
+            Gets consumption file size
+            </summary>
+      <returns>consumption quantity</returns>
+    </member>
+    <member name="M:Aspose.OMR.Metered.GetConsumptionCredit">
+      <summary>
+            Gets consumption credit
+            </summary>
+      <returns>consumption quantity</returns>
+    </member>
+    <!-- Badly formed XML comment ignored for member "P:Aspose.OMR.Generation.ConfigValidator.Result" -->
+    <member name="T:Aspose.OMR.Generation.Config.BaseConfig">
+      <summary>
+            Abstraction which contains required fields for each omr element
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.BaseConfig.Type">
+      <summary>
+            Type of omr element. Does not have default value. Must be overridden.
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.BaseConfig.Name">
+      <summary>
+            Name of omr element. Can be used in different cases based on element
+            </summary>
+    </member>
+    <member name="T:Aspose.OMR.Generation.Config.Elements.AnswerSheetConfig">
+      <summary>
+            Represents AnswerSheet element.
+            It allows adding choice boxes grouped in columns and rows. 
+            Use the answer sheet if you want to fit a lot of questions on a page since they are located close to each other.
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.AnswerSheetConfig.Name">
+      <summary>
+            Name of answer sheet
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.AnswerSheetConfig.Column">
+      <summary>
+            Indicates in which column to draw sheet
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.AnswerSheetConfig.ElementsCount">
+      <summary>
+            Determines the total number of questions in the answer sheet.
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.AnswerSheetConfig.ColumnsCount">
+      <summary>
+            Sets the number of columns to be drawn.
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.AnswerSheetConfig.AnswersCount">
+      <summary>
+            The number of answer options for each question in the answer sheet.
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.AnswerSheetConfig.StartId">
+      <summary>
+            The starting index of the questions numbering
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.AnswerSheetConfig.VerticalMargin">
+      <summary>
+            Vertical margin of answer sheet. Set in pixels.
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Elements.AnswerSheetConfig.BubbleSize">
+      <summary>
+            The size of a bubble
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.AnswerSheetConfig.AnswersValues">
+      <summary>
+            Each value represent symbol inside of bubble. Must have same count as <see cref="P:Aspose.OMR.Generation.Config.Elements.AnswerSheetConfig.AnswersCount" />
+            Example: new string[] {"A", "B", "C", "D"}
+            Example: new string[] {"1", "2", "3", "4"}
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.AnswerSheetConfig.Type">
+      <summary>
+            Type of omr element. Required field for JSON serialization.
+            </summary>
+    </member>
+    <member name="T:Aspose.OMR.Generation.Config.Elements.BarcodeConfig">
+      <summary>
+            Barcode element. Can be used to encode value.
+            Positioned on page using coordinates in pixels.
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.BarcodeConfig.Name">
+      <summary>
+            Barcode name. For value <see cref="P:Aspose.OMR.Generation.Config.Elements.BarcodeConfig.Value" /></summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.BarcodeConfig.Value">
+      <summary>
+            The value of barcode to encode
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.BarcodeConfig.BarcodeType">
+      <summary>
+            The type of barcode element
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.BarcodeConfig.BarcodeQRVersion">
+      <summary>
+            The QR version of QR code
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.BarcodeConfig.Align">
+      <summary>
+            The barcode alignment on page
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.BarcodeConfig.Height">
+      <summary>
+            The target height of barcode image
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.BarcodeConfig.DrawCodetext">
+      <summary>
+            Indicates whether to draw text below barcode image)
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.BarcodeConfig.X">
+      <summary>
+            X coordinate. Set value to -1 for skip
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.BarcodeConfig.Y">
+      <summary>
+            Y coordinate. Set value to -1 for skip
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.BarcodeConfig.Type">
+      <summary>
+            Type of omr element. Required field for JSON serialization.
+            </summary>
+    </member>
+    <member name="T:Aspose.OMR.Generation.Config.Elements.ChoiceBoxConfig">
+      <summary>
+            The choice box is a basic element that represents a single question with set amount of answers.
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.ChoiceBoxConfig.Name">
+      <summary>
+            name of Choice box. For display value <see cref="P:Aspose.OMR.Generation.Config.Elements.ChoiceBoxConfig.QuestionText" /></summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.ChoiceBoxConfig.FontFamily">
+      <summary>
+            The font family of the text
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.ChoiceBoxConfig.FontStyle">
+      <summary>
+            The style of the text
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.ChoiceBoxConfig.FontSize">
+      <summary>
+            The size of the text font
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.ChoiceBoxConfig.TextAlignment">
+      <summary>
+            Text alignment, indicating where text should be drawn on page
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.ChoiceBoxConfig.AnswersString">
+      <summary>
+            Gets or sets answer strings for ChoiceBox element
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.ChoiceBoxConfig.QuestionText">
+      <summary>
+            Gets or sets question text for ChoiceBox element
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.ChoiceBoxConfig.Type">
+      <summary>
+            Type of omr element. Required field for JSON serialization.
+            </summary>
+    </member>
+    <member name="T:Aspose.OMR.Generation.Config.Elements.CompositeGridConfig">
+      <summary>
+            Grid element.
+            Produce array of bubbles. Each filled bubble represent one symbol in composite value
+            All marked symbols will be concatenated into single value
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.CompositeGridConfig.Name">
+      <summary>
+            Name of grid. Used as identifier in recognition
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.CompositeGridConfig.Column">
+      <summary>
+            When element is drawn in multi-column parent - represent position.
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.CompositeGridConfig.ColumnsCount">
+      <summary>
+            Amount of columns inside grid. Each column represent single symbol in result value
+            Amount have to be equal to <see cref="P:Aspose.OMR.Generation.Config.Elements.CompositeGridConfig.ExtraRow" /> amount of columns
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.CompositeGridConfig.GridAlignment">
+      <summary>
+            Grid alignment, indicates where grid should be drawn on page
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.CompositeGridConfig.HeaderType">
+      <summary>
+            Indicates what type of element to draw at the start of the grid
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.CompositeGridConfig.HeaderBorderSize">
+      <summary>
+            Square border size
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.CompositeGridConfig.HeaderBorderColor">
+      <summary>
+            Square border color
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.CompositeGridConfig.GridOrientation">
+      <summary>
+            Grid orientation: horizontal or vertical. Indicates how child elements should be positioned
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Elements.CompositeGridConfig.VerticalMargin">
+      <summary>
+            The margin between lines
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Elements.CompositeGridConfig.BubbleSize">
+      <summary>
+            The size of a bubble
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.CompositeGridConfig.XPosition">
+      <summary>
+            Grid X position on page, overrides the alignment
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.CompositeGridConfig.YPosition">
+      <summary>
+            Grid Y position on page, overrides the alignment
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.CompositeGridConfig.Values">
+      <summary>
+            Collection of strings that will describe possible symbols in each column.
+            Column-specific values are placed in <see cref="P:Aspose.OMR.Generation.Config.Elements.CompositeGridConfig.ExtraRow" /></summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.CompositeGridConfig.ExtraRow">
+      <summary>
+            Column-specific  values that will be placed on top of default ones - <see cref="P:Aspose.OMR.Generation.Config.Elements.CompositeGridConfig.Values" />.
+            Presented as  two dimensional array.
+            First - row. Second - column.
+            Each string represent text inside bubble.
+            if string is null no bubble will be placed.
+            Amount of columns have to be equal to <see cref="P:Aspose.OMR.Generation.Config.Elements.CompositeGridConfig.ColumnsCount" /></summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.CompositeGridConfig.RotationAngle">
+      <summary>
+            Describe rotation of Grid element around its own axis.
+            "90" - rotate CompositeGrid 90 degrees
+            "-90" - rotate ComopositeGrid to -90 degrees
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.CompositeGridConfig.Type">
+      <summary>
+            Type of omr element. Required field for JSON serialization.
+            </summary>
+    </member>
+    <member name="T:Aspose.OMR.Generation.Config.Elements.ContentConfig">
+      <summary>
+            Represent content element. Can be used as child element in the table.
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.ContentConfig.Name">
+      <summary>
+            Content value
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.ContentConfig.FontFamily">
+      <summary>
+            The font family of the text
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.ContentConfig.FontStyle">
+      <summary>
+            The style of the text
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.ContentConfig.FontSize">
+      <summary>
+            The size of the text font
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.ContentConfig.ContentType">
+      <summary>
+            Type of text display.
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.ContentConfig.Alignment">
+      <summary>
+            Alignment of content string inside parent
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.ContentConfig.Type">
+      <summary>
+            Type of omr element. Required field for JSON serialization.
+            </summary>
+    </member>
+    <member name="T:Aspose.OMR.Generation.Config.Elements.CustomAnswerSheet.BubbleArrayConfig">
+      <summary>
+            Display possible answers as options each inside circle(bubble).
+            Can only be used inside <see cref="T:Aspose.OMR.Generation.Config.Elements.CustomAnswerSheet.CustomRowConfig" /></summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.CustomAnswerSheet.BubbleArrayConfig.Name">
+      <summary>
+            Name of bubble Array. Does not participate in displaying or generation of element
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.CustomAnswerSheet.BubbleArrayConfig.AnswersValues">
+      <summary>
+            Each value represent symbol inside of bubble. Must have same count as <see cref="!:AnswersCount" />
+            Example: new string[] {"A", "B", "C", "D"}
+            Example: new string[] {"1", "2", "3", "4"}
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.CustomAnswerSheet.BubbleArrayConfig.FontFamily">
+      <summary>
+            The font family of the text
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.CustomAnswerSheet.BubbleArrayConfig.FontStyle">
+      <summary>
+            The style of the text
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.CustomAnswerSheet.BubbleArrayConfig.FontSize">
+      <summary>
+            The size of the text font
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.CustomAnswerSheet.BubbleArrayConfig.BubbleSize">
+      <summary>
+            The size of a bubble
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.CustomAnswerSheet.BubbleArrayConfig.Type">
+      <summary>
+            Type of omr element. Required field for JSON serialization.
+            </summary>
+    </member>
+    <member name="T:Aspose.OMR.Generation.Config.Elements.CustomAnswerSheet.CustomAnswerSheetConfig">
+      <summary>
+            Repeat custom rows. To describe custom row use - <see cref="T:Aspose.OMR.Generation.Config.Elements.CustomAnswerSheet.CustomRowConfig" /></summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.CustomAnswerSheet.CustomAnswerSheetConfig.ColumnsCount">
+      <summary>
+            Amount of columns(sections) to group rows
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.CustomAnswerSheet.CustomAnswerSheetConfig.Amount">
+      <summary>
+            Total amount of rows
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.CustomAnswerSheet.CustomAnswerSheetConfig.Name">
+      <summary>
+            Name of RepeatRows element
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.CustomAnswerSheet.CustomAnswerSheetConfig.BorderType">
+      <summary>
+            Type of drawn border to separate columns(sections)
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.CustomAnswerSheet.CustomAnswerSheetConfig.BorderSize">
+      <summary>
+            Size of border line
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.CustomAnswerSheet.CustomAnswerSheetConfig.BorderColor">
+      <summary>
+            Color of border
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.CustomAnswerSheet.CustomAnswerSheetConfig.Children">
+      <summary>
+            Child omr elements. In most cases positioned inside of parent or below.
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.CustomAnswerSheet.CustomAnswerSheetConfig.Type">
+      <summary>
+            Type of omr element. Required field for JSON serialization.
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.CustomAnswerSheet.CustomAnswerSheetConfig.Proportions">
+      <summary>
+            Width ratio of each column inside it
+            </summary>
+    </member>
+    <member name="T:Aspose.OMR.Generation.Config.Elements.CustomAnswerSheet.CustomRowConfig">
+      <summary>
+            Description of CustomRow. Used with <see cref="T:Aspose.OMR.Generation.Config.Elements.CustomAnswerSheet.CustomAnswerSheetConfig" /></summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.CustomAnswerSheet.CustomRowConfig.Name">
+      <summary>
+            Name of custom row
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.CustomAnswerSheet.CustomRowConfig.Children">
+      <summary>
+            Child omr elements. In most cases positioned inside of parent or below.
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.CustomAnswerSheet.CustomRowConfig.Type">
+      <summary>
+            Type of omr element. Required field for JSON serialization.
+            </summary>
+    </member>
+    <member name="T:Aspose.OMR.Generation.Config.Elements.CustomTriggerConfig">
+      <summary>
+            Custom Bubble. Upon filling can change behavior\value of target elements
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.CustomTriggerConfig.Value">
+      <summary>
+            Value of custom trigger. Use of this value depends on <see cref="P:Aspose.OMR.Generation.Config.Elements.CustomTriggerConfig.TriggerType" /></summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.CustomTriggerConfig.Name">
+      <summary>
+            Name of trigger.
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.CustomTriggerConfig.Target">
+      <summary>
+            Name of target element. Behavior depends on <see cref="P:Aspose.OMR.Generation.Config.Elements.CustomTriggerConfig.TriggerType" /></summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Elements.CustomTriggerConfig.BubbleSize">
+      <summary>
+            The size of a bubble
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.CustomTriggerConfig.TriggerType">
+      <summary>
+            Type of trigger. Describe trigger behavior
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.CustomTriggerConfig.Type">
+      <summary>
+            Type of omr element. Required field for JSON serialization.
+            </summary>
+    </member>
+    <member name="T:Aspose.OMR.Generation.Config.Elements.EmptyLineConfig">
+      <summary>
+            Empty element. Can be used as vertical margin. Skipped height can be set via property.
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.EmptyLineConfig.Name">
+      <summary>
+            Name of empty line skip - does not drawn or participate in recognition
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.EmptyLineConfig.Height">
+      <summary>
+            Height in pixels. 
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.EmptyLineConfig.Type">
+      <summary>
+            Type of omr element. Required field for JSON serialization.
+            </summary>
+    </member>
+    <member name="T:Aspose.OMR.Generation.Config.Elements.GridConfig">
+      <summary>
+            Represent table of bubbles. 
+            Question identifier and multiple answers to choose
+            Line of answers can be horizontal or vertical
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.GridConfig.Name">
+      <summary>
+            Name of grid. Used as identifier in recognition
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.GridConfig.Column">
+      <summary>
+            When element is drawn in multi-column parent - represent position.
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.GridConfig.SectionsCount">
+      <summary>
+            Amount of choice boxes inside grid, i.e. columns in top-down grid
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.GridConfig.OptionsCount">
+      <summary>
+            Amount of answer options in each choice box, i.e. rows in top-down grid
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.GridConfig.GridAlignment">
+      <summary>
+            Grid alignment, indicates where grid should be drawn on page
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.GridConfig.HeaderType">
+      <summary>
+            Indicates what type of element to draw at the start of the grid
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.GridConfig.HeaderBorderSize">
+      <summary>
+            Square border size
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.GridConfig.HeaderBorderColor">
+      <summary>
+            Square border color
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.GridConfig.GridOrientation">
+      <summary>
+            Grid orientation: horizontal or vertical. Indicates how child elements should be positioned
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Elements.GridConfig.VerticalMargin">
+      <summary>
+            The margin between lines
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Elements.GridConfig.BubbleSize">
+      <summary>
+            The size of a bubble
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.GridConfig.XPosition">
+      <summary>
+            Grid X position on page, overrides the alignment
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.GridConfig.YPosition">
+      <summary>
+            Grid Y position on page, overrides the alignment
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.GridConfig.Type">
+      <summary>
+            Type of omr element. Required field for JSON serialization.
+            </summary>
+    </member>
+    <member name="T:Aspose.OMR.Generation.Config.Elements.ImageConfig">
+      <summary>
+            Represents Image element. 
+            Inserted from file system using provided path
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.ImageConfig.Name">
+      <summary>
+            Name of picture. Required.
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Elements.ImageConfig.ImageAlign">
+      <summary>
+            The Image alignment on page
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.ImageConfig.Path">
+      <summary>
+            Path to picture. Filled using <see cref="P:Aspose.OMR.Generation.Config.Elements.ImageConfig.Name" /> and <see cref="F:Aspose.OMR.Generation.GlobalPageSettings.ImagesPaths" /></summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.ImageConfig.XPosition">
+      <summary>
+            Grid X position on page, overrides the alignment
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.ImageConfig.YPosition">
+      <summary>
+            Grid Y position on page, overrides the alignment
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.ImageConfig.Height">
+      <summary>
+            Height of the image
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.ImageConfig.Width">
+      <summary>
+            Width of the image
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.ImageConfig.Type">
+      <summary>
+            Type of omr element. Required field for JSON serialization.
+            </summary>
+    </member>
+    <member name="T:Aspose.OMR.Generation.Config.Elements.InputGroup">
+      <summary>
+            Grouping element. Consists of two Content children. Drawn in proportions 1\3 and 2\3.
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.InputGroup.Name">
+      <summary>
+            Name of grouping element
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.InputGroup.Type">
+      <summary>
+            Type of omr element. Required field for JSON serialization.
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.InputGroup.Children">
+      <summary>
+            Child omr elements. In most cases positioned inside of parent or below.
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.InputGroup.LabelBorder">
+      <summary>
+            Type of drawn border
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.InputGroup.InputBorder">
+      <summary>
+            Type of drawn border
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.InputGroup.BorderSize">
+      <summary>
+            Size of border line
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.InputGroup.BorderColor">
+      <summary>
+            Color of border
+            </summary>
+    </member>
+    <member name="T:Aspose.OMR.Generation.Config.Elements.Parents.AnswerConfig">
+      <summary>
+            Represents Answer element.
+            Can be used as child with <see cref="T:Aspose.OMR.Generation.Config.Elements.Parents.VerticalChoiceBoxConfig" /></summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.Parents.AnswerConfig.Name">
+      <summary>
+            Text of answer
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.Parents.AnswerConfig.Children">
+      <summary>
+            Child omr elements. In most cases positioned inside of parent or below.
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.Parents.AnswerConfig.BubbleType">
+      <summary>
+            Type of drawn bubble.
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.Parents.AnswerConfig.Type">
+      <summary>
+            Type of omr element. Required field for JSON serialization.
+            </summary>
+    </member>
+    <member name="T:Aspose.OMR.Generation.Config.Elements.Parents.BlockConfig">
+      <summary>
+            Represents Block element.
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.Parents.BlockConfig.Name">
+      <summary>
+            Name of Block element
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.Parents.BlockConfig.Children">
+      <summary>
+            Child omr elements. In most cases positioned inside of parent or below.
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.Parents.BlockConfig.Column">
+      <summary>
+            When placed in multi-column container - represent position in parent
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.Parents.BlockConfig.BorderType">
+      <summary>
+            Type of drawn border
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.Parents.BlockConfig.BorderSize">
+      <summary>
+            Size of border line
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.Parents.BlockConfig.BorderColor">
+      <summary>
+            Color of border
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.Parents.BlockConfig.IsClipped">
+      <summary>
+            If true block, and all it's content will be clipped as picture upon recognition
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.Parents.BlockConfig.Type">
+      <summary>
+            Type of omr element. Required field for JSON serialization.
+            </summary>
+    </member>
+    <member name="T:Aspose.OMR.Generation.Config.Elements.Parents.CheckBoxConfig">
+      <summary>
+            Represents CheckBox element.
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.Parents.CheckBoxConfig.HideName">
+      <summary>
+            Control display of CheckBox name in template
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.Parents.CheckBoxConfig.Name">
+      <summary>
+            name of Check box. by default displayed before first check box. Can be hidden by <see cref="P:Aspose.OMR.Generation.Config.Elements.Parents.CheckBoxConfig.HideName" /></summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.Parents.CheckBoxConfig.Orientation">
+      <summary>
+            Control position of child elements.
+            Currently support only horizontal.
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.Parents.CheckBoxConfig.BubbleSize">
+      <summary>
+            Size of rectangle for each option(children)
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.Parents.CheckBoxConfig.Threshold">
+      <summary>
+            Custom recognition marker.
+            By default set to 3%.
+            Check box will be considered marked if 3% of it's region is filled.
+            Can be customized to any other threshold.
+            Does not affect global threshold
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.Parents.CheckBoxConfig.Type">
+      <summary>
+            Type of omr element. Required field for JSON serialization.
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.Parents.CheckBoxConfig.Children">
+      <summary>
+            Child omr elements. In most cases positioned inside of parent or below.
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.Parents.CheckBoxConfig.FontFamily">
+      <summary>
+            The font family of the text
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.Parents.CheckBoxConfig.FontStyle">
+      <summary>
+            The style of the text
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.Parents.CheckBoxConfig.FontSize">
+      <summary>
+            The size of the text font
+            </summary>
+    </member>
+    <member name="T:Aspose.OMR.Generation.Config.Elements.Parents.ContainerConfig">
+      <summary>
+            Represents Container element.
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.Parents.ContainerConfig.Name">
+      <summary>
+            Name of container element
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.Parents.ContainerConfig.Children">
+      <summary>
+            Child omr elements. In most cases positioned inside of parent or below.
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.Parents.ContainerConfig.ColumnsCount">
+      <summary>
+            Amount of columns inside of container. Divided on equal columns.
+            Obsolete version of <see cref="P:Aspose.OMR.Generation.Config.Elements.Parents.ContainerConfig.Proportions" /></summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.Parents.ContainerConfig.Proportions">
+      <summary>
+            Divide on custom ratio each column inside it
+            Newer version of <see cref="P:Aspose.OMR.Generation.Config.Elements.Parents.ContainerConfig.ColumnsCount" /></summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.Parents.ContainerConfig.ContainerType">
+      <summary>
+            Type of Container
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.Parents.ContainerConfig.BlockRightMargin">
+      <summary>
+            Amount of pixels to be placed between Blocks.
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.Parents.ContainerConfig.BlockBottomMargin">
+      <summary>
+            Amount of pixels to be placed between Blocks.
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.Parents.ContainerConfig.BlockTopPadding">
+      <summary>
+            Amount of pixels to be placed between Blocks.
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.Parents.ContainerConfig.Type">
+      <summary>
+            Type of omr element. Required field for JSON serialization.
+            </summary>
+    </member>
+    <member name="T:Aspose.OMR.Generation.Config.Elements.Parents.PageConfig">
+      <summary>
+            Represents Page element.
+            One per page. Must be placed inside of <see cref="T:Aspose.OMR.Generation.Config.TemplateConfig" /></summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.Parents.PageConfig.Name">
+      <summary>
+            Name of page
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.Parents.PageConfig.Children">
+      <summary>
+            Child omr elements. In most cases positioned inside of parent or below.
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.Parents.PageConfig.Type">
+      <summary>
+            Type of omr element. Required field for JSON serialization.
+            </summary>
+    </member>
+    <member name="T:Aspose.OMR.Generation.Config.Elements.Parents.ParagraphConfig">
+      <summary>
+            Represents Paragraph element.
+            Paragraph can consist of both text and text with an image. 
+            The image is specified by coordinates x, y. 
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.Parents.ParagraphConfig.Name">
+      <summary>
+            Name of paragraph
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.Parents.ParagraphConfig.Children">
+      <summary>
+            Child omr elements. In most cases positioned inside of parent or below.
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.Parents.ParagraphConfig.ParagraphType">
+      <summary>
+            Type of Paragraph
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.Parents.ParagraphConfig.Type">
+      <summary>
+            Type of omr element. Required field for JSON serialization.
+            </summary>
+    </member>
+    <member name="T:Aspose.OMR.Generation.Config.Elements.Parents.VerticalChoiceBoxConfig">
+      <summary>
+            The VerticalChoiceBox consists of a <see cref="T:Aspose.OMR.Generation.Config.Elements.Parents.AnswerConfig" /> element that contains a short response and <see cref="T:Aspose.OMR.Generation.Config.Elements.ContentConfig" /> elements that describe the response option in detail. 
+            It can also contain a <see cref="T:Aspose.OMR.Generation.Config.Elements.WriteInConfig" /> element in which the user can enter his own answer.
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.Parents.VerticalChoiceBoxConfig.Name">
+      <summary>
+            Value of Question
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.Parents.VerticalChoiceBoxConfig.Children">
+      <summary>
+            Child omr elements. In most cases positioned inside of parent or below.
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.Parents.VerticalChoiceBoxConfig.Type">
+      <summary>
+            Type of omr element. Required field for JSON serialization.
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.Parents.VerticalChoiceBoxConfig.Threshold">
+      <summary>
+            Percent of pixels after which bubbles considered marked
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.Parents.VerticalChoiceBoxConfig.TopPadding">
+      <summary>
+            Amount of pixels. Can be used to add extra space above element. 
+            Or remove existing space by setting a negative value(e.g. -40)
+            </summary>
+    </member>
+    <member name="T:Aspose.OMR.Generation.Config.Elements.ScoreGroup.ScoreAnswerConfig">
+      <summary>
+            Answer with scored value
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.ScoreGroup.ScoreAnswerConfig.Score">
+      <summary>
+            Amount of score 
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.ScoreGroup.ScoreAnswerConfig.Type">
+      <summary>
+            Type of omr element. Required field for JSON serialization.
+            </summary>
+    </member>
+    <member name="T:Aspose.OMR.Generation.Config.Elements.ScoreGroup.ScoreGroupConfig">
+      <summary>
+            Grouping parent. Score based table.
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.ScoreGroup.ScoreGroupConfig.Name">
+      <summary>
+            Name of RepeatRows element
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.ScoreGroup.ScoreGroupConfig.Children">
+      <summary>
+            Child omr elements. In most cases positioned inside of parent or below.
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.ScoreGroup.ScoreGroupConfig.ScoreGroupType">
+      <summary>
+            Type of score group
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.ScoreGroup.ScoreGroupConfig.Type">
+      <summary>
+            Type of omr element. Required field for JSON serialization.
+            </summary>
+    </member>
+    <member name="T:Aspose.OMR.Generation.Config.Elements.ScoreGroup.ScoreHeaderConfig">
+      <summary>
+            Column in <see cref="T:Aspose.OMR.Generation.Config.Elements.ScoreGroup.ScoreGroupConfig" /> that will store amount of points for each answer.
+            If absent - that column will not be drawn.
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.ScoreGroup.ScoreHeaderConfig.Score">
+      <summary>
+            Score modifier
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.ScoreGroup.ScoreHeaderConfig.Name">
+      <summary>
+            Title of column header
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.ScoreGroup.ScoreHeaderConfig.HeaderType">
+      <summary>
+            The type of header
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.ScoreGroup.ScoreHeaderConfig.Type">
+      <summary>
+            Type of omr element. Required field for JSON serialization.
+            </summary>
+    </member>
+    <member name="T:Aspose.OMR.Generation.Config.Elements.ScoreGroup.ScoreQuestionConfig">
+      <summary>
+            Represent ScoreQuestion element 
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.ScoreGroup.ScoreQuestionConfig.FontFamily">
+      <summary>
+            The font family of the text
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.ScoreGroup.ScoreQuestionConfig.FontStyle">
+      <summary>
+            The style of the text
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.ScoreGroup.ScoreQuestionConfig.FontSize">
+      <summary>
+            The size of the text font
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.ScoreGroup.ScoreQuestionConfig.Proportions">
+      <summary>
+            Width ratio of each column inside it
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.ScoreGroup.ScoreQuestionConfig.ScoreDisplay">
+      <summary>
+            Describe display behavior for score value.
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.ScoreGroup.ScoreQuestionConfig.Name">
+      <summary>
+            Name of RepeatRows element
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.ScoreGroup.ScoreQuestionConfig.Children">
+      <summary>
+            Child omr elements. In most cases positioned inside of parent or below.
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.ScoreGroup.ScoreQuestionConfig.Type">
+      <summary>
+            Type of omr element. Required field for JSON serialization.
+            </summary>
+    </member>
+    <member name="T:Aspose.OMR.Generation.Config.Elements.ScoreGroup.TableContentConfig">
+      <summary>
+            Text inside table structure
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.ScoreGroup.TableContentConfig.Column">
+      <summary>
+            Column position in table.
+            first column - '1'
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.ScoreGroup.TableContentConfig.Row">
+      <summary>
+            Row position in table
+            first row - '1'
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.ScoreGroup.TableContentConfig.Type">
+      <summary>
+            Type of omr element. Required field for JSON serialization.
+            </summary>
+    </member>
+    <member name="T:Aspose.OMR.Generation.Config.Elements.Table.QuestionConfig">
+      <summary>
+            Represents Question element. Commonly used in <see cref="T:Aspose.OMR.Generation.Config.Elements.Table.TableConfig" /> as rows.
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.Table.QuestionConfig.Name">
+      <summary>
+            Value of Question
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.Table.QuestionConfig.Type">
+      <summary>
+            Type of omr element. Required field for JSON serialization.
+            </summary>
+    </member>
+    <member name="T:Aspose.OMR.Generation.Config.Elements.Table.TableAnswerConfig">
+      <summary>
+            Element of <see cref="T:Aspose.OMR.Generation.Config.Elements.Table.TableHeaderConfig" />. Represent column header.
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.Table.TableAnswerConfig.Name">
+      <summary>
+            Title of column header
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.Table.TableAnswerConfig.Type">
+      <summary>
+            Type of omr element. Required field for JSON serialization.
+            </summary>
+    </member>
+    <member name="T:Aspose.OMR.Generation.Config.Elements.Table.TableConfig">
+      <summary>
+            Represents Table element.
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.Table.TableConfig.Name">
+      <summary>
+            Name of table element
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.Table.TableConfig.Children">
+      <summary>
+            Child omr elements. In most cases positioned inside of parent or below.
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.Table.TableConfig.AnswersCount">
+      <summary>
+            Number of answers(columns) used in table. Must correlate with <see cref="T:Aspose.OMR.Generation.Config.Elements.Parents.AnswerConfig" /><see cref="T:Aspose.OMR.Generation.Config.Elements.Table.QuestionConfig" /></summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.Table.TableConfig.TableType">
+      <summary>
+            Type of table
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.Table.TableConfig.Type">
+      <summary>
+            Type of omr element. Required field for JSON serialization.
+            </summary>
+    </member>
+    <member name="T:Aspose.OMR.Generation.Config.Elements.Table.TableHeaderConfig">
+      <summary>
+            Represents TableHeader element
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.Table.TableHeaderConfig.Name">
+      <summary>
+            Text value
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.Table.TableHeaderConfig.Children">
+      <summary>
+            Child omr elements. In most cases positioned inside of parent or below.
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Elements.Table.TableHeaderConfig.FontFamily">
+      <summary>
+            The font family of the text
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Elements.Table.TableHeaderConfig.FontStyle">
+      <summary>
+            The style of the text
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Elements.Table.TableHeaderConfig.FontSize">
+      <summary>
+            The size of the text font
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.Table.TableHeaderConfig.Type">
+      <summary>
+            Type of omr element. Required field for JSON serialization.
+            </summary>
+    </member>
+    <member name="T:Aspose.OMR.Generation.Config.Elements.Table.TableTitleConfig">
+      <summary>
+            Represents TableTitle element.
+            Display title. Used with <see cref="T:Aspose.OMR.Generation.Config.Elements.Table.TableConfig" /></summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.Table.TableTitleConfig.Name">
+      <summary>
+            Text value of title
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Elements.Table.TableTitleConfig.FontFamily">
+      <summary>
+            The font family of the text
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Elements.Table.TableTitleConfig.FontStyle">
+      <summary>
+            The style of the text
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Elements.Table.TableTitleConfig.FontSize">
+      <summary>
+            The size of the text font
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Elements.Table.TableTitleConfig.Color">
+      <summary>
+            The color of the text
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Elements.Table.TableTitleConfig.BackgroundColor">
+      <summary>
+            The background color of the table title
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Elements.Table.TableTitleConfig.BorderType">
+      <summary>
+            Border type
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Elements.Table.TableTitleConfig.BorderSize">
+      <summary>
+            The size of the border
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Elements.Table.TableTitleConfig.BorderColor">
+      <summary>
+            Color of the border
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.Table.TableTitleConfig.Type">
+      <summary>
+            Type of omr element. Required field for JSON serialization.
+            </summary>
+    </member>
+    <member name="T:Aspose.OMR.Generation.Config.Elements.TextConfig">
+      <summary>
+            Represents Text element. 
+            Used for displaying information.
+            Does not participate in recognition.
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.TextConfig.Name">
+      <summary>
+            Text that needs to be displayed
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.TextConfig.FontFamily">
+      <summary>
+            The font family of the text
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.TextConfig.FontStyle">
+      <summary>
+            The style of the text
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.TextConfig.FontSize">
+      <summary>
+            The size of the text font
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.TextConfig.TextAlignment">
+      <summary>
+            Text alignment, indicating where text should be drawn on page
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.TextConfig.Type">
+      <summary>
+            Type of omr element. Required field for JSON serialization.
+            </summary>
+    </member>
+    <member name="T:Aspose.OMR.Generation.Config.Elements.WriteInConfig">
+      <summary>
+            Represents Write-In element.     
+            Used for handwritten fields. 
+            Upon recognition clipped as picture and placed in folder.
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.WriteInConfig.Name">
+      <summary>
+            Name of Write-In area and name of picture when recognized.
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.WriteInConfig.Required">
+      <summary>
+            Is clipping of write-in field required
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.Elements.WriteInConfig.Type">
+      <summary>
+            Type of omr element. Required field for JSON serialization.
+            </summary>
+    </member>
+    <member name="T:Aspose.OMR.Generation.Config.Enums.AlignmentEnum">
+      <summary>
+            Type of horizontal alignment relative to it's parent. Used in many elements. 
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Enums.AlignmentEnum.Left">
+      <summary>
+            Align element to the left
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Enums.AlignmentEnum.Center">
+      <summary>
+            Align element at the center of it's parent
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Enums.AlignmentEnum.Right">
+      <summary>
+            Align element at the right side
+            </summary>
+    </member>
+    <member name="T:Aspose.OMR.Generation.Config.Enums.BorderType">
+      <summary>
+            The Border type
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Enums.BorderType.None">
+      <summary>
+            No framing
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Enums.BorderType.Square">
+      <summary>
+            Square frame
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Enums.BorderType.Rounded">
+      <summary>
+            Rounded frame
+            </summary>
+    </member>
+    <member name="T:Aspose.OMR.Generation.Config.Enums.BubbleType">
+      <summary>
+            Type of bubble.
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Enums.BubbleType.Round">
+      <summary>
+            Round bubble
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Enums.BubbleType.Square">
+      <summary>
+            Square bubble
+            </summary>
+    </member>
+    <member name="T:Aspose.OMR.Generation.Config.Enums.ConfigType">
+      <summary>
+            Type of Omr Element
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Enums.ConfigType.Text">
+      <summary>
+        <see cref="T:Aspose.OMR.Generation.Config.Elements.TextConfig" />
+      </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Enums.ConfigType.Grid">
+      <summary>
+        <see cref="T:Aspose.OMR.Generation.Config.Elements.GridConfig" />
+      </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Enums.ConfigType.AnswerSheet">
+      <summary>
+        <see cref="T:Aspose.OMR.Generation.Config.Elements.AnswerSheetConfig" />
+      </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Enums.ConfigType.Table">
+      <summary>
+        <see cref="T:Aspose.OMR.Generation.Config.Elements.Table.TableConfig" />
+      </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Enums.ConfigType.Barcode">
+      <summary>
+        <see cref="T:Aspose.OMR.Generation.Config.Elements.BarcodeConfig" />
+      </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Enums.ConfigType.Block">
+      <summary>
+        <see cref="T:Aspose.OMR.Generation.Config.Elements.Parents.BlockConfig" />
+      </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Enums.ConfigType.ChoiceBox">
+      <summary>
+        <see cref="T:Aspose.OMR.Generation.Config.Elements.ChoiceBoxConfig" />
+      </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Enums.ConfigType.Container">
+      <summary>
+        <see cref="T:Aspose.OMR.Generation.Config.Elements.Parents.ContainerConfig" />
+      </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Enums.ConfigType.Image">
+      <summary>
+        <see cref="T:Aspose.OMR.Generation.Config.Elements.ImageConfig" />
+      </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Enums.ConfigType.Paragraph">
+      <summary>
+        <see cref="T:Aspose.OMR.Generation.Config.Elements.Parents.ParagraphConfig" />
+      </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Enums.ConfigType.WriteIn">
+      <summary>
+        <see cref="T:Aspose.OMR.Generation.Config.Elements.WriteInConfig" />
+      </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Enums.ConfigType.Page">
+      <summary>
+        <see cref="T:Aspose.OMR.Generation.Config.Elements.Parents.PageConfig" />
+      </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Enums.ConfigType.Template">
+      <summary>
+        <see cref="T:Aspose.OMR.Generation.Config.TemplateConfig" />
+      </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Enums.ConfigType.EmptyLine">
+      <summary>
+        <see cref="T:Aspose.OMR.Generation.Config.Elements.EmptyLineConfig" />
+      </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Enums.ConfigType.Question">
+      <summary>
+        <see cref="T:Aspose.OMR.Generation.Config.Elements.Table.QuestionConfig" />
+      </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Enums.ConfigType.TableTitle">
+      <summary>
+        <see cref="T:Aspose.OMR.Generation.Config.Elements.Table.TableTitleConfig" />
+      </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Enums.ConfigType.Content">
+      <summary>
+        <see cref="T:Aspose.OMR.Generation.Config.Elements.ContentConfig" />
+      </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Enums.ConfigType.Column">
+      <summary>
+            Alias. <see cref="F:Aspose.OMR.Generation.Config.Enums.ConfigType.Content" /></summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Enums.ConfigType.TableAnswer">
+      <summary>
+        <see cref="T:Aspose.OMR.Generation.Config.Elements.Table.TableAnswerConfig" />
+      </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Enums.ConfigType.TableHeader">
+      <summary>
+        <see cref="T:Aspose.OMR.Generation.Config.Elements.Table.TableHeaderConfig" />
+      </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Enums.ConfigType.Header">
+      <summary>
+            Alias. <see cref="F:Aspose.OMR.Generation.Config.Enums.ConfigType.TableHeader" /></summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Enums.ConfigType.Answer">
+      <summary>
+        <see cref="T:Aspose.OMR.Generation.Config.Elements.Parents.AnswerConfig" />
+      </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Enums.ConfigType.VerticalChoiceBox">
+      <summary>
+        <see cref="T:Aspose.OMR.Generation.Config.Elements.Parents.VerticalChoiceBoxConfig" />
+      </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Enums.ConfigType.InputGroup">
+      <summary>
+        <see cref="T:Aspose.OMR.Generation.Config.Elements.InputGroup" />
+      </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Enums.ConfigType.CustomAnswerSheet">
+      <summary>
+        <see cref="!:Elements.Parents.CustomAnswerSheetConfig" />
+      </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Enums.ConfigType.CustomRow">
+      <summary>
+        <see cref="!:Elements.Parents.CustomRowConfig" />
+      </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Enums.ConfigType.BubbleArray">
+      <summary>
+        <see cref="T:Aspose.OMR.Generation.Config.Elements.CustomAnswerSheet.BubbleArrayConfig" />
+      </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Enums.ConfigType.ScoreGroup">
+      <summary>
+        <see cref="T:Aspose.OMR.Generation.Config.Elements.ScoreGroup.ScoreGroupConfig" />
+      </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Enums.ConfigType.ScoreQuestion">
+      <summary>
+        <see cref="T:Aspose.OMR.Generation.Config.Elements.ScoreGroup.ScoreQuestionConfig" />
+      </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Enums.ConfigType.ScoreHeader">
+      <summary>
+        <see cref="T:Aspose.OMR.Generation.Config.Elements.ScoreGroup.ScoreHeaderConfig" />
+      </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Enums.ConfigType.CustomTrigger">
+      <summary>
+        <see cref="T:Aspose.OMR.Generation.Config.Elements.CustomTriggerConfig" />
+      </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Enums.ConfigType.ScoreAnswer">
+      <summary>
+        <see cref="T:Aspose.OMR.Generation.Config.Elements.ScoreGroup.ScoreAnswerConfig" />
+      </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Enums.ConfigType.CheckBox">
+      <summary>
+        <see cref="T:Aspose.OMR.Generation.Config.Elements.Parents.CheckBoxConfig" />
+      </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Enums.ConfigType.TableContent">
+      <summary>
+        <see cref="T:Aspose.OMR.Generation.Config.Elements.ScoreGroup.TableContentConfig" />
+      </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Enums.ConfigType.CompositeGrid">
+      <summary>
+        <see cref="T:Aspose.OMR.Generation.Config.Elements.CompositeGridConfig" />
+      </summary>
+    </member>
+    <member name="T:Aspose.OMR.Generation.Config.Enums.ContainerTypeEnum">
+      <summary>
+            Type of <see cref="T:Aspose.OMR.Generation.Config.Elements.Parents.ContainerConfig" /></summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Enums.ContainerTypeEnum.Normal">
+      <summary>
+            Container will be drawn according to it's position
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Enums.ContainerTypeEnum.Footer">
+      <summary>
+            Container will be drawn in the footer - at the end of the page.
+            </summary>
+    </member>
+    <member name="T:Aspose.OMR.Generation.Config.Enums.ContentType">
+      <summary>
+            Type of content display
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Enums.ContentType.Normal">
+      <summary>
+            Default value.Draw text as is.
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Enums.ContentType.Cells">
+      <summary>
+            Draw cells. Each symbol inside of line is enclosed in rectangle(cell) 
+            </summary>
+    </member>
+    <member name="T:Aspose.OMR.Generation.Config.Enums.GridHeaderTypeEnum">
+      <summary>
+            The type of grid header
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Enums.GridHeaderTypeEnum.Underline">
+      <summary>
+            Underline on grid header
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Enums.GridHeaderTypeEnum.Square">
+      <summary>
+            Square on grid header
+            </summary>
+    </member>
+    <member name="T:Aspose.OMR.Generation.Config.Enums.ParagraphTypeEnum">
+      <summary>
+            Type of <see cref="T:Aspose.OMR.Generation.Config.Elements.Parents.ParagraphConfig" /></summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Enums.ParagraphTypeEnum.Normal">
+      <summary>
+            Paragraph without extra element
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Enums.ParagraphTypeEnum.Multiple">
+      <summary>
+            Paragraph with extra element e.g. image
+            </summary>
+    </member>
+    <member name="T:Aspose.OMR.Generation.Config.Enums.ScoreDisplay">
+      <summary>
+            Control displaying of score value.
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Enums.ScoreDisplay.DontDisplay">
+      <summary>
+            Score value will be hidden from user.
+            Score value still participate in recognition and total score amount.
+            <see cref="F:Aspose.OMR.Generation.Config.Enums.ScoreHeaderType.Amount" /> will be ignored.
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Enums.ScoreDisplay.DisplayAsExtraColumn">
+      <summary>
+            Score value will be displayed as extra column and will be visible to user.
+            Score value participate in recognition and total score amount.
+            <see cref="F:Aspose.OMR.Generation.Config.Enums.ScoreHeaderType.Amount" /> will mark score column position among other columns.
+            Please use only one such header
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Enums.ScoreDisplay.DisplayInsideCell">
+      <summary>
+            Score value will be displayed inside each cell.
+            Score value will be places inside each bubble. In current version - one digit per bubble or exception will be thrown.
+            <see cref="F:Aspose.OMR.Generation.Config.Enums.ScoreHeaderType.Amount" /> will be ignored.
+            </summary>
+    </member>
+    <member name="T:Aspose.OMR.Generation.Config.Enums.ScoreGroupType">
+      <summary>
+            Type of score Group. Impacts drawing of score group element
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Enums.ScoreGroupType.Table">
+      <summary>
+            Position each question as table, answer as row
+            </summary>
+    </member>
+    <member name="T:Aspose.OMR.Generation.Config.Enums.ScoreHeaderType">
+      <summary>
+            Type of score header.
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Enums.ScoreHeaderType.Positive">
+      <summary>
+            If bubble under this column is marked - score value will be added.
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Enums.ScoreHeaderType.Negative">
+      <summary>
+            If bubble under this column is marked - nothing will happen.
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Enums.ScoreHeaderType.Amount">
+      <summary>
+            This column header will store score value. e.g. "2" or "4"
+            Can only be used with <see cref="F:Aspose.OMR.Generation.Config.Enums.ScoreDisplay.DisplayAsExtraColumn" /></summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Enums.ScoreHeaderType.Question">
+      <summary>
+            In this column:
+            header - question text.
+            Rows - answers 
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Enums.ScoreHeaderType.Content">
+      <summary>
+            In this column custom content can be placed.
+            Header - header text
+            Rows - Content element with row and column specified
+            </summary>
+    </member>
+    <member name="T:Aspose.OMR.Generation.Config.Enums.TableType">
+      <summary>
+            The Table type
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Enums.TableType.None">
+      <summary>
+            Simple table
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Enums.TableType.Striped">
+      <summary>
+            Striped table
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Enums.TableType.EqualCells">
+      <summary>
+            Every column has equal width
+            </summary>
+    </member>
+    <member name="T:Aspose.OMR.Generation.Config.Enums.TriggerType">
+      <summary>
+            Type of trigger. Describe trigger behavior
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Config.Enums.TriggerType.ReplaceValue">
+      <summary>
+            When recognized change value of element to trigger value, upon filling
+            </summary>
+    </member>
+    <member name="T:Aspose.OMR.Generation.Config.ParentConfig">
+      <summary>
+            Abstraction which mark element as parent and allow to have other elements as children
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.ParentConfig.Children">
+      <summary>
+            Child omr elements. In most cases positioned inside of parent or below.
+            </summary>
+    </member>
+    <member name="T:Aspose.OMR.Generation.Config.TemplateConfig">
+      <summary>
+            Root element that contains all other omr elements
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.TemplateConfig.Name">
+      <summary>
+            Template name
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.TemplateConfig.Children">
+      <summary>
+            Child omr elements. In most cases positioned inside of parent or below.
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.Config.TemplateConfig.Type">
+      <summary>
+            Type of omr element. Required field for JSON serialization.
+            </summary>
+    </member>
+    <member name="T:Aspose.OMR.Generation.BubbleSize">
+      <summary>
+            The sizes of a bubbles
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.BubbleSize.undefined">
+      <summary>
+            Value was not set and must be replaced
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.BubbleSize.Extrasmall">
+      <summary>
+            Responsible for bubble size 40
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.BubbleSize.Small">
+      <summary>
+            Responsible for bubble size 50
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.BubbleSize.Normal">
+      <summary>
+            Responsible for bubble size 60
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.BubbleSize.Large">
+      <summary>
+            Responsible for bubble size 80
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.BubbleSize.Extralarge">
+      <summary>
+            Responsible for bubble size 100
+            </summary>
+    </member>
+    <member name="T:Aspose.OMR.Generation.Color">
+      <summary>
+            The Colors
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Color.Aqua">
+      <summary>
+            Aqua color
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Color.Aquamarine">
+      <summary>
+            Aquamarine color
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Color.Black">
+      <summary>
+            Black color
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Color.Blue">
+      <summary>
+            Blue color
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Color.BlueViolet">
+      <summary>
+            BlueViolet color
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Color.Crimson">
+      <summary>
+            Crimson color
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Color.DarkBlue">
+      <summary>
+            DarkBlue color
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Color.DarkGreen">
+      <summary>
+            DarkGreen color
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Color.DarkOrange">
+      <summary>
+            DarkOrange color
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Color.DarkSalmon">
+      <summary>
+            DarkSalmon color
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Color.Fuchsia">
+      <summary>
+            Fuchsia color
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Color.Indigo">
+      <summary>
+            Indigo color
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Color.Lime">
+      <summary>
+            Lime color
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Color.Red">
+      <summary>
+            The red color    
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Color.Teal">
+      <summary>
+            Teal color
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Color.White">
+      <summary>
+            White color
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Color.Gray">
+      <summary>
+            Gray color
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Color.LightGray">
+      <summary>
+            LightGray color
+            </summary>
+    </member>
+    <member name="T:Aspose.OMR.Generation.FontStyle">
+      <summary>
+            The font styles
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.FontStyle.undefined">
+      <summary>
+            Value was not set and must be replaced
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.FontStyle.Regular">
+      <summary>
+            Normal text
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.FontStyle.Bold">
+      <summary>
+            The Bold text
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.FontStyle.Italic">
+      <summary>
+            Italic text
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.FontStyle.Underline">
+      <summary>
+            Underlined text
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.FontStyle.Strikeout">
+      <summary>
+            Text with a line through the middle
+            </summary>
+    </member>
+    <member name="T:Aspose.OMR.Generation.Orientation">
+      <summary>
+            The orientation
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Orientation.Horizontal">
+      <summary>
+            The horizontal orientation
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.Orientation.Vertical">
+      <summary>
+            The vertical orientation
+            </summary>
+    </member>
+    <member name="T:Aspose.OMR.Generation.PaperSize">
+      <summary>
+            The paper size
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.PaperSize.Letter">
+      <summary>
+            Letter size(2551 x 3295 pixels)
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.PaperSize.A4">
+      <summary>
+            A4 size(2480 x 3508 pixels)
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.PaperSize.Legal">
+      <summary>
+            Legal size(2551 x 4205 pixels)
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.PaperSize.Tabloid">
+      <summary>
+            Tabloid, 11" x 17" size(3295 x 5102)
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.PaperSize.p8519">
+      <summary>
+            8.5" x 19" size(2551 x 5702)
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.PaperSize.p8521">
+      <summary>
+            8.5 x 21" size(2551 x 6302)
+            </summary>
+    </member>
+    <member name="T:Aspose.OMR.Generation.GenerationResult">
+      <summary>
+            The result of the template generation.
+            Contains the template image and the template (json that describes elements location on the image).
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.GenerationResult.TemplateImage">
+      <summary>
+            Gets or sets the generated Template Image 
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.GenerationResult.MultipageTemplateImages">
+      <summary>
+            Gets or sets the collection of generated images for a multi-page template 
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.GenerationResult.Template">
+      <summary>
+            Gets or sets the Template JSON string
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.GenerationResult.ErrorCode">
+      <summary>
+            Gets or sets the error code. Equals 0 if no errors occurred.
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.GenerationResult.ErrorMessage">
+      <summary>
+            Gets or sets the message describing error. Empty if no errors occurred.
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Generation.GenerationResult.Warnings">
+      <summary>
+            Gets or sets list of the warnings messages describing non-critical faults appeared during generation
+            </summary>
+    </member>
+    <member name="M:Aspose.OMR.Generation.GenerationResult.Save(System.String,System.String)">
+      <summary>
+            Save template images and template to the specified folder
+            </summary>
+      <param name="folder">Destination folder</param>
+      <param name="name">Name of the template</param>
+    </member>
+    <member name="M:Aspose.OMR.Generation.GenerationResult.SaveAsPdf(System.String,System.String)">
+      <summary>
+            Save template images and template to the specified folder
+            Template image saved as pdf 
+            </summary>
+      <param name="folder">Destination folder</param>
+      <param name="name">Name of the template</param>
+    </member>
+    <member name="T:Aspose.OMR.Generation.GlobalPageSettings">
+      <summary>
+            The global settings applicable to all page elements.
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.GlobalPageSettings.FontFamily">
+      <summary>
+            The font family of the text
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.GlobalPageSettings.FontStyle">
+      <summary>
+            The style of the text
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.GlobalPageSettings.FontSize">
+      <summary>
+            The size of the text font
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.GlobalPageSettings.PaperSize">
+      <summary>
+            Paper size
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.GlobalPageSettings.BubbleColor">
+      <summary>
+            Color of the bubbles
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.GlobalPageSettings.ImagesPaths">
+      <summary>
+            Full paths to the images used in generation
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.GlobalPageSettings.PageMarginLeft">
+      <summary>
+            Left margin of the page on pixels
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.GlobalPageSettings.PageMarginRight">
+      <summary>
+            Right margin of the page on pixels
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.GlobalPageSettings.Orientation">
+      <summary>
+            Orientation of the page
+            </summary>
+    </member>
+    <member name="F:Aspose.OMR.Generation.GlobalPageSettings.BubbleSize">
+      <summary>
+            The size of the bubbles
+            </summary>
+    </member>
+    <member name="T:Aspose.OMR.Generation.MemoryGenerationResult">
+      <summary>
+        <see cref="T:Aspose.OMR.Generation.GenerationResult" /> wrapper. 
+            Allows to save result as MemoryStream
+            </summary>
+    </member>
+    <member name="M:Aspose.OMR.Generation.MemoryGenerationResult.#ctor(Aspose.OMR.Generation.GenerationResult)">
+      <summary>
+            Initialize instance of the wrapper.
+            </summary>
+      <param name="result">successfully generated template</param>
+    </member>
+    <member name="M:Aspose.OMR.Generation.MemoryGenerationResult.GetOmr(System.Text.Encoding)">
+      <summary>
+            Get content of .omr file from the <see cref="T:Aspose.OMR.Generation.GenerationResult" /> as MemoryStream.
+            By default text encoded in UTF8 encoding.
+            </summary>
+      <param name="encoding">type of encoding which will be used to encode text into bytes</param>
+      <returns>content of .omr file</returns>
+    </member>
+    <member name="M:Aspose.OMR.Generation.MemoryGenerationResult.GetImages">
+      <summary>
+            Get .png files from the <see cref="T:Aspose.OMR.Generation.GenerationResult" /> as MemoryStream.
+            </summary>
+      <returns>Template images</returns>
+    </member>
+    <member name="M:Aspose.OMR.Generation.MemoryGenerationResult.GetPDF">
+      <summary>
+            Get .pdf files from the <see cref="T:Aspose.OMR.Generation.GenerationResult" /> as MemoryStream.
+            </summary>
+      <returns>Template images as pdf</returns>
+    </member>
+    <member name="T:Aspose.OMR.License">
+      <summary>
+            Provides methods to license the component.
+            </summary>
+      <example>
+            In this example, an attempt will be made to find a license file named MyLicense.lic
+            in the folder that contains 
+            the component, in the folder that contains the calling assembly,
+            in the folder of the entry assembly and then in the embedded resources of the calling assembly.
+            <code>
+            [C#]
+            
+            License license = new License();
+            license.SetLicense("MyLicense.lic");
+            
+            
+            [Visual Basic]
+            
+            Dim license As license = New license
+            License.SetLicense("MyLicense.lic")
+            </code></example>
+    </member>
+    <member name="P:Aspose.OMR.License.Embedded">
+      <summary>
+            License number was added as embedded resource.
+            </summary>
+    </member>
+    <member name="M:Aspose.OMR.License.SetLicense(System.String)">
+      <summary>
+            Licenses the component.
+            </summary>
+      <remarks>
+        <p>Tries to find the license in the following locations:</p>
+        <p>1. Explicit path.</p>
+        <p>2. The folder that contains the Aspose component assembly.</p>
+        <p>3. The folder that contains the client's calling assembly.</p>
+        <p>4. The folder that contains the entry (startup) assembly.</p>
+        <p>5. An embedded resource in the client's calling assembly.</p>
+        <p>
+          <b>Note:</b>On the .NET Compact Framework, tries to find the license only in these locations:</p>
+        <p>1. Explicit path.</p>
+        <p>2. An embedded resource in the client's calling assembly.</p>
+      </remarks>
+      <example>
+            In this example, an attempt will be made to find a license file named MyLicense.lic
+            in the folder that contains 
+            the component, in the folder that contains the calling assembly,
+            in the folder of the entry assembly and then in the embedded resources of the calling assembly.
+            <code>
+            [C#]
+            
+            License license = new License();
+            license.SetLicense("MyLicense.lic");
+            
+            
+            [Visual Basic]
+            
+            Dim license As License = New License
+            license.SetLicense("MyLicense.lic")
+            </code><param name="licenseName">Can be a full or short file name or name of an embedded resource.
+            Use an empty string to switch to evaluation mode.</param></example>
+    </member>
+    <member name="M:Aspose.OMR.License.SetLicense(System.IO.Stream)">
+      <summary>
+            Licenses the component.
+            </summary>
+      <param name="stream">A stream that contains the license.</param>
+      <remarks>
+        <p>Use this method to load a license from a stream.</p>
+      </remarks>
+      <example>
+        <code>
+            [C#]
+            
+            License license = new License();
+            license.SetLicense(myStream);
+            
+            
+            [Visual Basic]
+            
+            Dim license as License = new License
+            license.SetLicense(myStream)
+            </code>
+      </example>
+    </member>
+    <member name="T:Aspose.OMR.Model.IOmrElement">
+      <summary>
+            The interface for the OMR elements
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Model.IOmrElement.QuestionName">
+      <summary>
+            Gets or sets the Question Name 
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Model.IOmrElement.SortWeight">
+      <summary>
+            Higher the value - latter in csv element will appear
+            </summary>
+    </member>
+    <member name="M:Aspose.OMR.Model.IOmrElement.GetAnswer">
+      <summary>
+            Forms a string with recognition result
+            </summary>
+      <returns>String containing recognition result</returns>
+    </member>
+    <member name="M:Aspose.OMR.Model.IOmrElement.GetCsv">
+      <summary>
+            Forms answers as a comma-separated values string
+            </summary>
+      <returns>The recognition results as CSV string</returns>
+    </member>
+    <member name="T:Aspose.OMR.Model.RecognitionResult">
+      <summary>
+            The result of the image recognition.
+            Contains all OMR elements with detailed recognition information and methods for results export.
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Model.RecognitionResult.PageName">
+      <summary>
+            Gets or sets page name
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Model.RecognitionResult.ImagePath">
+      <summary>
+            Gets or sets the path to the processed image
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Model.RecognitionResult.TemplateName">
+      <summary>
+            Gets or sets the OMR template
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Model.RecognitionResult.OmrElements">
+      <summary>
+            Gets or sets the list of OMR elements on page
+            </summary>
+    </member>
+    <member name="P:Aspose.OMR.Model.RecognitionResult.Images">
+      <summary>
+            Gets or sets the list of Write-in fild Images
+            </summary>
+    </member>
+    <member name="M:Aspose.OMR.Model.RecognitionResult.GetCsvAsStream(System.Text.Encoding)">
+      <summary>
+            Form CSV string with recognition results as MemoryStream
+            </summary>
+      <param name="encoding">Encoding with which we encode CSV string</param>
+      <returns>Recognition result as MemoryStream with CSV</returns>
+    </member>
+    <member name="M:Aspose.OMR.Model.RecognitionResult.GetCsv(System.Text.Encoding)">
+      <summary>
+            Form CSV string with recognition results as MemoryStream
+            </summary>
+      <param name="encoding">Encoding with which we encode CSV string</param>
+      <returns>Recognition result as array of bytes</returns>
+    </member>
+    <member name="M:Aspose.OMR.Model.RecognitionResult.GetCsv">
+      <summary>
+            Form CSV string with recognition results
+            </summary>
+      <returns>Recognition results as CSV string</returns>
+    </member>
+    <member name="M:Aspose.OMR.Model.RecognitionResult.GetJsonAsStream(System.Text.Encoding)">
+      <summary>
+            Form JSON string with recognition results as MemoryStream
+            </summary>
+      <param name="encoding">Encoding with which we encode JSON string</param>
+      <returns>Recognition result as MemoryStream with JSON</returns>
+    </member>
+    <member name="M:Aspose.OMR.Model.RecognitionResult.GetJson(System.Text.Encoding)">
+      <summary>
+            Form JSON string with recognition results as MemoryStream
+            </summary>
+      <param name="encoding">Encoding with which we encode JSON string</param>
+      <returns>Recognition result as array of bytes</returns>
+    </member>
+    <member name="M:Aspose.OMR.Model.RecognitionResult.GetJson">
+      <summary>
+            Form JSON string with recognition results
+            </summary>
+      <returns>Recognition results as JSON string</returns>
+    </member>
+    <member name="M:Aspose.OMR.Model.RecognitionResult.GetXml(System.Text.Encoding)">
+      <summary>
+            Form XML string with recognition results as MemoryStream
+            </summary>
+      <param name="encoding">Encoding with which we encode XML string</param>
+      <returns>Recognition result as array of bytes</returns>
+    </member>
+    <member name="M:Aspose.OMR.Model.RecognitionResult.GetXmlAsStream(System.Text.Encoding)">
+      <summary>
+            Form XML string with recognition results as MemoryStream
+            </summary>
+      <param name="encoding">Encoding with which we encode XML string</param>
+      <returns>Recognition result as MemoryStream with XML</returns>
+    </member>
+    <member name="M:Aspose.OMR.Model.RecognitionResult.GetXml">
+      <summary>
+            Form XML string with recognition results
+            </summary>
+      <returns>Recognition results as XML string</returns>
+    </member>
+  </members>
+</doc>

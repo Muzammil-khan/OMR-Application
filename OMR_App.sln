@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31919.166
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OMR_App", "OMR_App\OMR_App.csproj", "{61EB277D-1B40-4535-BAB0-FF4C110D5BDD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{61EB277D-1B40-4535-BAB0-FF4C110D5BDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61EB277D-1B40-4535-BAB0-FF4C110D5BDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61EB277D-1B40-4535-BAB0-FF4C110D5BDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61EB277D-1B40-4535-BAB0-FF4C110D5BDD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9AD65BBE-8C07-48F6-8411-35A430CFCC29}
+	EndGlobalSection
+EndGlobal
